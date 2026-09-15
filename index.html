@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raunaq Singh</title>
+<meta name="description" content="Raunaq Singh — Industrial Engineering, Georgia Tech. Quantitative research, ML, and software.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231F6F5C'/%3E%3Cpath d='M6 20 L12 14 L16 18 L26 8' stroke='white' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f4f5f2;
+    --ink: #1b1f24;
+    --muted: #626a6f;
+    --accent: #1f6f5c;
+    --accent-soft: #e7efea;
+    --rule: #e2e1d8;
+    --font-serif: 'IBM Plex Serif', Georgia, serif;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 64px;
+  }
+
+  /* ---------- sidebar ---------- */
+  aside {
+    padding-top: 72px;
+    align-self: start;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .curve { margin-bottom: 22px; }
+
+  h1.name {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+
+  .role {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 28px;
+    max-width: 22ch;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+
+  .side-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-size: 0.9rem;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .resume-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 9px 16px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 3px;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .resume-btn:hover { background: #185b4c; text-decoration: none; }
+
+  /* ---------- main content ---------- */
+  main { padding: 72px 0 100px; }
+
+  section { margin-bottom: 68px; scroll-margin-top: 32px; }
+
+  h2.section-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .lede {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    max-width: 46ch;
+    margin: 0 0 8px;
+  }
+
+  p { max-width: 62ch; }
+  p.about-text { color: var(--ink); }
+
+  .entry { margin-bottom: 34px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .entry-title { font-weight: 600; font-size: 1.02rem; }
+  .entry-when { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+
+  .entry-org { color: var(--muted); font-size: 0.92rem; margin-bottom: 10px; }
+
+  ul.bullets {
+    margin: 10px 0 12px;
+    padding-left: 20px;
+  }
+  ul.bullets li { margin-bottom: 7px; max-width: 62ch; }
+
+  .stack {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin: 2px 6px 2px 0;
+  }
+
+  .project-summary {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--ink);
+    margin: 0 0 12px;
+    max-width: 58ch;
+  }
+
+  .project-links { margin-top: 10px; font-size: 0.9rem; }
+
+  ul.compact {
+    padding-left: 20px;
+    margin: 0;
+  }
+  ul.compact li { margin-bottom: 6px; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 800px) {
+    .wrap { grid-template-columns: 1fr; padding: 0 22px; }
+    aside {
+      position: static;
+      padding-top: 48px;
+      max-height: none;
+    }
+    main { padding: 40px 0 80px; }
+    nav ul { flex-direction: row; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <aside>
+    <svg class="curve" width="120" height="34" viewBox="0 0 120 34" fill="none" aria-hidden="true">
+      <polyline points="0,20 14,17 28,23 42,14 56,19 70,9 84,16 98,6 112,12"
+        stroke="#1F6F5C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <h1 class="name">Raunaq Singh</h1>
+    <p class="role">Industrial Engineering, Georgia Tech — AI &amp; Operations Research concentration</p>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#activities">Beyond the desk</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="side-links">
+      <a href="mailto:singh.raunaq1006@gmail.com">singh.raunaq1006@gmail.com</a>
+      <a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">github.com/Rsingh1010</a>
+      <a href="https://www.linkedin.com/in/raunaq-singh-708588278/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="resume-btn" href="resume.pdf" target="_blank" rel="noopener">Download resume</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="about">
+      <p class="lede">I test trading ideas rigorously enough to report when they don't work.</p>
+      <p class="about-text">Sophomore at Georgia Tech, transferred from UIUC in fall 2026. Studying industrial engineering with a concentration in AI and operations research for decisions, and a minor in computing and theory. Most interested in machine learning engineering and quantitative research — problems where the right next step is checking whether an interesting result survives contact with more data, not just whether it looks good once.</p>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Software Engineering Intern</span>
+          <span class="entry-when">2026</span>
+        </div>
+        <div class="entry-org">MiraPhoto — early-stage startup engineering team</div>
+        <ul class="bullets">
+          <li>Owned an Organization Profile &amp; Event RSVP feature end to end, rebuilding the existing UI system — layout, typography, styling — from a single screenshot with no source access.</li>
+          <li>Migrated the feature from Next.js to Astro to meet static-frontend requirements, resolving routing, CI/CD, and hosting issues across GitHub Pages and Vercel.</li>
+          <li>Wired the Astro frontend to a live Node.js/Express/MongoDB backend by reading route handlers and schemas directly, and independently diagnosed an undocumented schema mismatch with the backend engineer.</li>
+          <li>Implemented role-based access control and strict form validation using React Hook Form and Zod.</li>
+        </ul>
+        <div>
+          <span class="stack">Node.js</span><span class="stack">Express</span><span class="stack">MongoDB</span><span class="stack">Astro</span><span class="stack">React</span><span class="stack">Zod</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Mean-Reversion Statistical Arbitrage System</span>
+        </div>
+        <p class="project-summary">A leakage-free pairs-trading pipeline that found one statistically significant pair — and then proved it wasn't tradeable.</p>
+        <ul class="bullets">
+          <li>Built candidate selection, log-price cointegration testing, and Benjamini-Hochberg FDR correction across 8 candidate pairs; one pair survived correction (KO–PEP, p = 0.036).</li>
+          <li>Designed train/test-separated hedge-ratio estimation and a vectorized z-score signal and backtesting engine with transaction costs and stop-losses, all metrics computed strictly out-of-sample.</li>
+          <li>Ran a full diagnostic suite — transaction-cost sensitivity, statistical-power check, walk-forward stability — that surfaced no robust tradeable edge, and closed the project as a documented negative result rather than overfitting a fix.</li>
+        </ul>
+        <div>
+          <span class="stack">Python</span><span class="stack">pandas</span><span class="stack">statsmodels</span><span class="stack">yfinance</span>
+        </div>
+        <div class="project-links"><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">View code on GitHub →</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Airbnb Pricing Analysis: NYC vs. Chicago</span>
+        </div>
+        <p class="project-summary">Comparing short-term rental pricing across two markets — and being honest about how little the obvious features explain.</p>
+        <ul class="bullets">
+          <li>Cleaned and analyzed Airbnb listings across NYC and Chicago, building price-distribution and neighborhood-level heatmap visualizations.</li>
+          <li>Found NYC priced modestly higher than Chicago ($106 vs. $99 median), with premium listings concentrated in Manhattan and Brooklyn versus Chicago's Loop and Near North Side.</li>
+          <li>Built linear regression and KMeans models to predict price from listing features; both showed low explanatory power (R² of 0.13 and 0.10) — a clean result showing surface-level features alone don't explain Airbnb pricing.</li>
+        </ul>
+        <div>
+          <span class="stack">Python</span><span class="stack">pandas</span><span class="stack">scikit-learn</span><span class="stack">seaborn</span><span class="stack">matplotlib</span>
+        </div>
+        <div class="project-links"><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">View code on GitHub →</a></div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <h2 class="section-title">Beyond the desk</h2>
+      <ul class="compact">
+        <li><strong>Founder, Boro Bike Club</strong> — launched and organized a student club from the ground up, managing logistics, recruitment, and community partnerships.</li>
+        <li><strong>Co-founder, Community Swim</strong> — coordinated programming and operations for a community swim initiative.</li>
+        <li><strong>Captain, Varsity Swim Team</strong> — led a competitive athletics team, mentoring teammates and managing accountability and performance standards.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Best reached by email — happy to talk about the diagnostic pass on the pairs-trading project, the MiraPhoto migration, or anything else here.</p>
+      <ul class="compact">
+        <li><a href="mailto:singh.raunaq1006@gmail.com">singh.raunaq1006@gmail.com</a></li>
+        <li><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">github.com/Rsingh1010</a></li>
+        <li><a href="https://www.linkedin.com/in/raunaq-singh-708588278/" target="_blank" rel="noopener">linkedin.com/in/raunaq-singh</a></li>
+        <li><a href="resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>Raunaq Singh — Atlanta, GA</span>
+      <span>Updated September 2026</span>
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
