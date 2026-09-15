@@ -248,7 +248,7 @@
 
     <section id="about">
       <p class="lede">I test trading ideas rigorously enough to report when they don't work.</p>
-      <p class="about-text">Sophomore at Georgia Tech, transferred from UIUC in fall 2026. Studying industrial engineering with a concentration in AI and operations research for decisions, and a minor in computing and theory. Most interested in machine learning engineering and quantitative research — problems where the right next step is checking whether an interesting result survives contact with more data, not just whether it looks good once.</p>
+      <p class="about-text">I’m a sophomore at Georgia Tech studying industrial engineering, with a concentration in AI and Operations Research for Decisions and a minor in Computing and Theory. I’m most interested in machine learning engineering and quantitative research, especially problems where finding something that works once is easy, and the real challenge is building something that keeps working.</p>
     </section>
 
     <section id="experience">
@@ -258,10 +258,10 @@
           <span class="entry-title">Software Engineering Intern</span>
           <span class="entry-when">2026</span>
         </div>
-        <div class="entry-org">MiraPhoto — early-stage startup engineering team</div>
+        <div class="entry-org">MiraPhoto | Early-stage startup engineering team</div>
         <ul class="bullets">
-          <li>Owned an Organization Profile &amp; Event RSVP feature end to end, rebuilding the existing UI system — layout, typography, styling — from a single screenshot with no source access.</li>
-          <li>Migrated the feature from Next.js to Astro to meet static-frontend requirements, resolving routing, CI/CD, and hosting issues across GitHub Pages and Vercel.</li>
+          <li>Owned an Organization Profile & Event RSVP feature end to end, rebuilding the existing UI system, including layout, typography, and styling, from a single screenshot with no source access.</li>
+          <li>Migrated the feature from Next.js to Astro to meet static frontend requirements, resolving routing, CI/CD, and hosting issues across GitHub Pages and Vercel.</li>
           <li>Wired the Astro frontend to a live Node.js/Express/MongoDB backend by reading route handlers and schemas directly, and independently diagnosed an undocumented schema mismatch with the backend engineer.</li>
           <li>Implemented role-based access control and strict form validation using React Hook Form and Zod.</li>
         </ul>
@@ -278,47 +278,48 @@
         <div class="entry-head">
           <span class="entry-title">Mean-Reversion Statistical Arbitrage System</span>
         </div>
-        <p class="project-summary">A leakage-free pairs-trading pipeline that found one statistically significant pair — and then proved it wasn't tradeable.</p>
+        <p class="project-summary">A leakage-free pairs-trading pipeline that found one statistically significant pair, and then proved it wasn't tradeable.</p>
         <ul class="bullets">
           <li>Built candidate selection, log-price cointegration testing, and Benjamini-Hochberg FDR correction across 8 candidate pairs; one pair survived correction (KO–PEP, p = 0.036).</li>
           <li>Designed train/test-separated hedge-ratio estimation and a vectorized z-score signal and backtesting engine with transaction costs and stop-losses, all metrics computed strictly out-of-sample.</li>
-          <li>Ran a full diagnostic suite — transaction-cost sensitivity, statistical-power check, walk-forward stability — that surfaced no robust tradeable edge, and closed the project as a documented negative result rather than overfitting a fix.</li>
+          <li>Ran a full diagnostic suite including transaction-cost sensitivity, statistical-power checks, and walk-forward stability that surfaced no robust tradeable edge, and closed the project as a documented negative result rather than overfitting a fix.</li>
         </ul>
         <div>
           <span class="stack">Python</span><span class="stack">pandas</span><span class="stack">statsmodels</span><span class="stack">yfinance</span>
         </div>
-        <div class="project-links"><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">View code on GitHub →</a></div>
+        <div class="project-links"><a href="https://github.com/Rsingh1010/mean-reversion-pairs-trading" target="_blank" rel="noopener">View code on GitHub →</a></div>
       </div>
 
       <div class="entry">
         <div class="entry-head">
           <span class="entry-title">Airbnb Pricing Analysis: NYC vs. Chicago</span>
         </div>
-        <p class="project-summary">Comparing short-term rental pricing across two markets — and being honest about how little the obvious features explain.</p>
+        <p class="project-summary">Comparing short-term rental pricing across two markets, and being honest about how little the obvious features explain.</p>
         <ul class="bullets">
           <li>Cleaned and analyzed Airbnb listings across NYC and Chicago, building price-distribution and neighborhood-level heatmap visualizations.</li>
           <li>Found NYC priced modestly higher than Chicago ($106 vs. $99 median), with premium listings concentrated in Manhattan and Brooklyn versus Chicago's Loop and Near North Side.</li>
-          <li>Built linear regression and KMeans models to predict price from listing features; both showed low explanatory power (R² of 0.13 and 0.10) — a clean result showing surface-level features alone don't explain Airbnb pricing.</li>
+          <li>Built linear regression and KMeans models to predict price from listing features; both showed low explanatory power (R² of 0.13 and 0.10), a clean result showing surface-level features alone don't explain Airbnb pricing.</li>
         </ul>
         <div>
           <span class="stack">Python</span><span class="stack">pandas</span><span class="stack">scikit-learn</span><span class="stack">seaborn</span><span class="stack">matplotlib</span>
         </div>
-        <div class="project-links"><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">View code on GitHub →</a></div>
+        <div class="project-links"><a href="https://github.com/Rsingh1010/airbnb-pricing-analysis" target="_blank" rel="noopener">View code on GitHub →</a></div>
       </div>
     </section>
 
     <section id="activities">
       <h2 class="section-title">Beyond the desk</h2>
       <ul class="compact">
-        <li><strong>Founder, Boro Bike Club</strong> — launched and organized a student club from the ground up, managing logistics, recruitment, and community partnerships.</li>
-        <li><strong>Co-founder, Community Swim</strong> — coordinated programming and operations for a community swim initiative.</li>
-        <li><strong>Captain, Varsity Swim Team</strong> — led a competitive athletics team, mentoring teammates and managing accountability and performance standards.</li>
+        <li><strong>Founder, Boro Bike Club</strong>: Started a casual neighborhood biking group with friends that grew as more kids in the area joined, coordinating group rides and deciding when and where to ride.</li>
+        <li><strong>Co-founder, Community Swim</strong>: Coordinated programming and operations for a community swim initiative.</li>
+        <li><strong>Captain, Varsity Swim Team</strong>: Led a competitive athletics team, mentoring teammates and managing accountability and performance standards.</li>
       </ul>
     </section>
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>
-      <p>Best reached by email — happy to talk about the diagnostic pass on the pairs-trading project, the MiraPhoto migration, or anything else here.</p>
+      <p>Best reached by email. Happy to talk about the diagnostic pass on the pairs-trading project, the MiraPhoto migration, or anything else here.
+</p>
       <ul class="compact">
         <li><a href="mailto:singh.raunaq1006@gmail.com">singh.raunaq1006@gmail.com</a></li>
         <li><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">github.com/Rsingh1010</a></li>
