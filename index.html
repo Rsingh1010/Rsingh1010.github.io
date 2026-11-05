@@ -178,31 +178,15 @@
     border-radius: 999px;
   }
 
-  details.tech {
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    background: #ffffff;
-    max-width: 680px;
-  }
-  details.tech summary {
-    cursor: pointer;
-    padding: 10px 16px;
-    font-weight: 500;
-    font-size: 0.93rem;
-    color: var(--lane);
-    list-style: none;
-  }
-  details.tech summary::-webkit-details-marker { display: none; }
-  details.tech summary::before {
-    content: "+";
-    display: inline-block;
-    width: 1.2em;
+  .work { max-width: 680px; }
+  .work h3 {
+    font-size: 0.95rem;
     font-weight: 600;
+    color: var(--pool);
+    margin: 0 0 6px;
   }
-  details.tech[open] summary::before { content: "\2212"; }
-  details.tech[open] summary { border-bottom: 1px solid var(--rule); }
-  details.tech ul { margin: 12px 0 14px; padding: 0 18px 0 36px; }
-  details.tech li { margin-bottom: 8px; font-size: 0.95rem; }
+  .work ul { margin: 0 0 4px; padding-left: 20px; border-left: 3px solid var(--tile); }
+  .work li { margin-bottom: 8px; font-size: 0.95rem; }
 
   .project-links { margin-top: 14px; font-size: 0.93rem; display: flex; gap: 22px; flex-wrap: wrap; font-weight: 500; }
 
@@ -357,15 +341,15 @@
         <ul class="tags" aria-label="Technologies used">
           <li>TypeScript</li><li>React</li><li>Astro</li><li>Next.js</li><li>Node.js</li><li>MongoDB</li><li>Zod</li><li>GitHub Actions</li><li>Vercel</li>
         </ul>
-        <details class="tech">
-          <summary>Technical details</summary>
+        <div class="work">
+          <h3>What I did</h3>
           <ul>
             <li>Rebuilt the existing UI, including layout, typography, and styling, from a single screenshot with no source access, and added role-based access for 3 user roles with Zod validation for phone, email, URL, and length.</li>
             <li>Migrated the feature from Next.js to Astro for static hosting, handling routing, GitHub Actions CI, and hosting limits across GitHub Pages and Vercel.</li>
             <li>Connected the frontend to the live Node/MongoDB API on production and staging by reading backend route and schema code, fixing field mismatches and an undocumented required field with the backend engineer.</li>
             <li>Wrote the backend validation schema for organization accounts, matching the codebase’s existing Zod conventions with no new TypeScript errors.</li>
           </ul>
-        </details>
+        </div>
       </div>
     </section>
 
@@ -382,15 +366,15 @@
         <ul class="tags" aria-label="Technologies used">
           <li>Python</li><li>pandas</li><li>scikit-learn</li><li>SciPy</li><li>PuLP</li><li>Streamlit</li><li>Plotly</li><li>pytest</li>
         </ul>
-        <details class="tech">
-          <summary>Technical details</summary>
+        <div class="work">
+          <h3>How I built it</h3>
           <ul>
             <li>Built a cached, validated data pipeline over PokéAPI and Smogon usage stats covering 1,025 species, with documented cleaning rules and a pytest suite.</li>
             <li>Tested K-Means and Gaussian mixture models against a stability rule set fixed before seeing results; no number of clusters from 3 to 8 passed (best bootstrap ARI 0.591 vs. 0.60 required), so the app reports a continuum, not archetypes.</li>
             <li>Linked stats to competitive usage: total stats track usage (Spearman 0.51, 95% CI 0.44–0.58), while stat shape adds almost nothing on held-out data.</li>
             <li>Formulated team building as an integer program in PuLP that maximizes type coverage, resistances, role coverage, and a stat floor under team rules; only 4% of 10,000 random teams met the rules and none matched the optimum.</li>
           </ul>
-        </details>
+        </div>
         <div class="project-links">
           <a href="https://pokelab-rsingh.streamlit.app" target="_blank" rel="noopener">Open the live app</a>
           <a href="https://github.com/Rsingh1010/pokelab" target="_blank" rel="noopener">View code on GitHub</a>
@@ -406,14 +390,14 @@
         <ul class="tags" aria-label="Technologies used">
           <li>Python</li><li>pandas</li><li>statsmodels</li><li>yfinance</li>
         </ul>
-        <details class="tech">
-          <summary>Technical details</summary>
+        <div class="work">
+          <h3>How I built it</h3>
           <ul>
             <li>Rebuilt an initial backtest after finding 5 flaws, including look-ahead bias in the hedge ratio, no train/test split, and pairs picked by correlation instead of cointegration.</li>
             <li>Tested 8 candidate pairs with Engle-Granger cointegration and Benjamini-Hochberg FDR correction; one pair survived (KO–PEP, adjusted p = 0.036).</li>
             <li>Ran transaction-cost sensitivity, statistical-power, and walk-forward stability checks that found no reliable edge, and closed the project as a documented negative result instead of tuning until it looked good.</li>
           </ul>
-        </details>
+        </div>
         <div class="project-links"><a href="https://github.com/Rsingh1010/mean-reversion-pairs-trading" target="_blank" rel="noopener">View code on GitHub</a></div>
       </div>
     </section>
