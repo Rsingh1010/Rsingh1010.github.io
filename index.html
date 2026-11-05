@@ -4,36 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raunaq Singh</title>
-<meta name="description" content="Raunaq Singh — Industrial Engineering at Georgia Tech. Data science, machine learning, and operations research.">
+<meta name="description" content="Raunaq Singh, Industrial Engineering at Georgia Tech. Machine learning, data science, and operations research.">
 <meta property="og:title" content="Raunaq Singh">
-<meta property="og:description" content="Industrial Engineering at Georgia Tech. Data science, machine learning, and operations research.">
+<meta property="og:description" content="Industrial Engineering at Georgia Tech. Machine learning, data science, and operations research.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rsingh1010.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231F6F5C'/%3E%3Cpath d='M6 20 L12 14 L16 18 L26 8' stroke='white' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23102A43'/%3E%3Crect x='6' y='14' width='5' height='4' fill='%23D64541'/%3E%3Crect x='13.5' y='14' width='5' height='4' fill='%23ffffff'/%3E%3Crect x='21' y='14' width='5' height='4' fill='%233A8DDE'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff;
-    --bg-alt: #f4f5f2;
-    --ink: #1b1f24;
-    --muted: #626a6f;
-    --accent: #1f6f5c;
-    --accent-soft: #e7efea;
-    --rule: #e2e1d8;
+    --pool: #102A43;        /* sidebar, deep water */
+    --pool-2: #1B3A5C;
+    --lane: #1C5D99;        /* links, primary accent */
+    --lane-bright: #3A8DDE;
+    --rope-red: #D64541;
+    --rope-yellow: #F0B429;
+    --tile: #EAF4F6;        /* soft panels */
+    --paper: #FCFDFD;
+    --ink: #16202B;
+    --muted: #566573;
+    --rule: #DCE5E9;
     --font-serif: 'IBM Plex Serif', Georgia, serif;
-    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
   body {
     margin: 0;
-    background: var(--bg);
+    background: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 16px;
@@ -41,166 +44,232 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: var(--accent); text-decoration: none; }
+  a { color: var(--lane); text-decoration: none; }
   a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible,
+  input:focus-visible, textarea:focus-visible { outline: 2px solid var(--rope-yellow); outline-offset: 3px; }
 
-  .wrap {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 28px;
+  .layout {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 64px;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
   }
 
-  /* ---------- sidebar ---------- */
+  /* ---------- sidebar: the pool, with a lane rope down its edge ---------- */
   aside {
-    padding-top: 72px;
-    align-self: start;
     position: sticky;
     top: 0;
-    max-height: 100vh;
+    height: 100vh;
     overflow-y: auto;
+    background: var(--pool);
+    color: #DCE7F0;
+    padding: 64px 40px 40px 36px;
   }
-
-  .curve { margin-bottom: 22px; }
+  aside::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 10px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--rope-red) 0 34px, #ffffff 34px 40px,
+      var(--lane-bright) 40px 74px, #ffffff 74px 80px
+    );
+  }
 
   h1.name {
     font-family: var(--font-serif);
     font-weight: 600;
-    font-size: 1.9rem;
-    line-height: 1.2;
-    margin: 0 0 6px;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    color: #ffffff;
+    margin: 0 0 10px;
   }
+  .role { font-size: 0.95rem; color: #AFC3D6; margin: 0 0 36px; max-width: 24ch; }
 
-  .role {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin: 0 0 28px;
-    max-width: 22ch;
-  }
-
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
+  nav ul { list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 4px; }
   nav a {
-    color: var(--ink);
-    font-size: 0.92rem;
+    display: block;
+    color: #DCE7F0;
+    font-size: 0.95rem;
+    padding: 5px 0 5px 12px;
+    margin-left: -15px;
+    border-left: 3px solid transparent;
   }
-  nav a:hover { color: var(--accent); text-decoration: none; }
+  nav a:hover { color: #ffffff; border-left-color: var(--rope-yellow); text-decoration: none; }
 
-  .side-links {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    font-size: 0.9rem;
-    padding-top: 22px;
-    border-top: 1px solid var(--rule);
+  .icon-links { display: flex; gap: 14px; margin-bottom: 22px; }
+  .icon-links a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--pool-2); color: #ffffff;
   }
+  .icon-links a:hover { background: var(--lane); text-decoration: none; }
+  .icon-links svg { width: 19px; height: 19px; }
 
   .resume-btn {
     display: inline-block;
-    margin-top: 18px;
-    padding: 9px 16px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 3px;
-    font-size: 0.88rem;
-    font-weight: 500;
+    padding: 10px 18px;
+    background: var(--rope-yellow);
+    color: var(--pool);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
-  .resume-btn:hover { background: #185b4c; text-decoration: none; }
+  .resume-btn:hover { background: #F7C552; text-decoration: none; }
 
-  /* ---------- main content ---------- */
-  main { padding: 72px 0 100px; }
+  /* ---------- main ---------- */
+  main { padding: 72px 64px 100px; max-width: 860px; }
 
-  section { margin-bottom: 68px; scroll-margin-top: 32px; }
+  section { margin-bottom: 76px; scroll-margin-top: 32px; }
 
   h2.section-title {
     font-family: var(--font-serif);
     font-weight: 600;
-    font-size: 1.4rem;
-    margin: 0 0 20px;
+    font-size: 1.55rem;
+    color: var(--pool);
+    margin: 0 0 24px;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
   }
 
+  /* intro */
   .lede {
     font-family: var(--font-serif);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    max-width: 46ch;
-    margin: 0 0 8px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: var(--pool);
+    max-width: 30ch;
+    margin: 0 0 20px;
   }
-
-  p { max-width: 62ch; }
-  p.about-text { color: var(--ink); }
-
-  .entry { margin-bottom: 34px; }
-  .entry:last-child { margin-bottom: 0; }
-
-  .entry-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 4px;
-  }
-
-  .entry-title { font-weight: 600; font-size: 1.02rem; }
-  .entry-when { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
-
-  .entry-org { color: var(--muted); font-size: 0.92rem; margin-bottom: 10px; }
-
-  ul.bullets {
-    margin: 10px 0 12px;
-    padding-left: 20px;
-  }
-  ul.bullets li { margin-bottom: 7px; max-width: 62ch; }
-
-  .stack {
-    font-family: var(--font-mono);
-    font-size: 0.76rem;
-    color: var(--accent);
-    background: var(--accent-soft);
+  .intro p { max-width: 62ch; margin: 0 0 14px; }
+  .seeking {
     display: inline-block;
-    padding: 3px 9px;
-    border-radius: 3px;
-    margin: 2px 6px 2px 0;
+    margin-top: 8px;
+    background: var(--tile);
+    border-left: 4px solid var(--lane);
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    max-width: 62ch;
   }
 
-  .project-summary {
+  /* entries */
+  .entry { margin-bottom: 48px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .entry-title { font-weight: 600; font-size: 1.12rem; color: var(--pool); }
+  .entry-when { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+  .entry-org { color: var(--muted); font-size: 0.94rem; margin: 2px 0 12px; }
+
+  .overview {
     font-family: var(--font-serif);
-    font-style: italic;
-    color: var(--ink);
-    margin: 0 0 12px;
-    max-width: 58ch;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    max-width: 62ch;
+    margin: 0 0 14px;
   }
 
-  .project-links { margin-top: 10px; font-size: 0.9rem; display: flex; gap: 18px; flex-wrap: wrap; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
+  .tags li {
+    font-size: 0.8rem;
+    color: var(--pool-2);
+    background: var(--tile);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  details.tech {
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: #ffffff;
+    max-width: 680px;
+  }
+  details.tech summary {
+    cursor: pointer;
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 0.93rem;
+    color: var(--lane);
+    list-style: none;
+  }
+  details.tech summary::-webkit-details-marker { display: none; }
+  details.tech summary::before {
+    content: "+";
+    display: inline-block;
+    width: 1.2em;
+    font-weight: 600;
+  }
+  details.tech[open] summary::before { content: "\2212"; }
+  details.tech[open] summary { border-bottom: 1px solid var(--rule); }
+  details.tech ul { margin: 12px 0 14px; padding: 0 18px 0 36px; }
+  details.tech li { margin-bottom: 8px; font-size: 0.95rem; }
+
+  .project-links { margin-top: 14px; font-size: 0.93rem; display: flex; gap: 22px; flex-wrap: wrap; font-weight: 500; }
 
   .shot {
     display: block;
     width: 100%;
-    max-width: 640px;
+    max-width: 680px;
     height: auto;
     border: 1px solid var(--rule);
-    border-radius: 4px;
-    margin: 4px 0 14px;
+    border-radius: 6px;
+    margin: 4px 0 16px;
   }
 
-  ul.compact {
-    padding-left: 20px;
-    margin: 0;
+  /* skills */
+  .skill-group { margin-bottom: 22px; }
+  .skill-group h3 { font-size: 1rem; font-weight: 600; color: var(--pool); margin: 0 0 10px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+  .skills li {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #ffffff;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 0.9rem;
   }
-  ul.compact li { margin-bottom: 6px; }
+  .skills img { width: 22px; height: 22px; }
+
+  /* activities */
+  ul.compact { padding-left: 20px; margin: 0; max-width: 66ch; }
+  ul.compact li { margin-bottom: 10px; }
+
+  /* contact */
+  .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  form.contact { display: flex; flex-direction: column; gap: 14px; }
+  form.contact label { font-size: 0.9rem; font-weight: 500; display: flex; flex-direction: column; gap: 5px; }
+  form.contact input, form.contact textarea {
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    border: 1px solid #C5D3DA;
+    border-radius: 5px;
+    background: #ffffff;
+    color: var(--ink);
+  }
+  form.contact textarea { min-height: 130px; resize: vertical; }
+  form.contact button {
+    align-self: flex-start;
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--lane);
+    color: #ffffff;
+    cursor: pointer;
+  }
+  form.contact button:hover { background: #164C7E; }
+  form.contact button:disabled { opacity: 0.6; cursor: default; }
+  .hp { position: absolute; left: -9999px; }
+  .form-status { font-size: 0.92rem; min-height: 1.4em; margin: 0; }
+  .form-status.ok { color: #1E7B4A; }
+  .form-status.err { color: var(--rope-red); }
+
+  .direct { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .direct a { display: inline-flex; align-items: center; gap: 10px; font-weight: 500; }
+  .direct svg { width: 20px; height: 20px; color: var(--pool); flex: none; }
 
   footer {
     border-top: 1px solid var(--rule);
@@ -212,58 +281,195 @@
     flex-wrap: wrap;
     gap: 10px;
   }
-  footer a { color: var(--muted); }
-  footer a:hover { color: var(--accent); }
 
-  @media (max-width: 800px) {
-    .wrap { grid-template-columns: 1fr; padding: 0 22px; }
-    aside {
-      position: static;
-      padding-top: 48px;
-      max-height: none;
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    aside { position: relative; height: auto; padding: 44px 24px 36px; }
+    aside::after {
+      top: auto; left: 0; width: auto; height: 10px;
+      background: repeating-linear-gradient(
+        to right,
+        var(--rope-red) 0 34px, #ffffff 34px 40px,
+        var(--lane-bright) 40px 74px, #ffffff 74px 80px
+      );
     }
-    main { padding: 40px 0 80px; }
-    nav ul { flex-direction: row; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+    .role { max-width: none; margin-bottom: 20px; }
+    nav ul { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 24px; }
+    nav a { padding-left: 0; margin-left: 0; border-left: 0; }
+    main { padding: 44px 20px 80px; }
+    .lede { font-size: 1.35rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 28px; }
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 5.5h18v13H3z M3.5 6l8.5 7 8.5-7"/></symbol>
+  <symbol id="i-github" viewBox="0 0 128 128"><path fill="currentColor" fill-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 128 128"><path fill="currentColor" d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></symbol>
+</svg>
+
+<div class="layout">
 
   <aside>
-    <svg class="curve" width="120" height="34" viewBox="0 0 120 34" fill="none" aria-hidden="true">
-      <polyline points="0,20 14,17 28,23 42,14 56,19 70,9 84,16 98,6 112,12"
-        stroke="#1F6F5C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-
     <h1 class="name">Raunaq Singh</h1>
-    <p class="role">Industrial Engineering, Georgia Tech | AI &amp; Operations Research</p>
+    <p class="role">Industrial Engineering at Georgia Tech, focused on AI and operations research</p>
 
-    <nav>
+    <nav aria-label="Sections">
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#activities">Beyond the desk</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <div class="side-links">
-      <a href="mailto:singh.raunaq1006@gmail.com">singh.raunaq1006@gmail.com</a>
-      <a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">github.com/Rsingh1010</a>
-      <a href="https://www.linkedin.com/in/raunaqs10/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="resume-btn" href="Raunaq.Singh.pdf" target="_blank" rel="noopener">Download resume</a>
+    <div class="icon-links">
+      <a href="mailto:singh.raunaq1006@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+      <a href="https://github.com/Rsingh1010" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/raunaqs10/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
     </div>
+    <a class="resume-btn" href="Raunaq.Singh.pdf" target="_blank" rel="noopener">Download resume</a>
   </aside>
 
   <main>
 
-    <section id="about">
+    <section id="about" class="intro">
       <p class="lede">I build data and optimization tools, and I report what the data actually says, including when it says no.</p>
-      <p class="about-text">I’m a sophomore at Georgia Tech studying industrial engineering, with a concentration in AI and Operations Research for Decisions and a minor in Computing and Theory. I’m looking for data science, machine learning, and operations research internships for Summer 2027. I like problems where a result that looks good once is easy to find, and the real work is testing whether it holds up.</p>
+      <p>I’m a sophomore at Georgia Tech studying industrial engineering, with a concentration in AI and Operations Research for Decisions and a minor in Computing and Theory. I like problems where a result that looks good once is easy to find, and the real work is testing whether it holds up.</p>
+      <p class="seeking">Looking for Summer 2027 internships in machine learning, data science, and operations research.</p>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Software Engineering Intern, MiraPhoto</span>
+          <span class="entry-when">June 2026 – September 2026</span>
+        </div>
+        <div class="entry-org">New York City, NY</div>
+        <p class="overview">MiraPhoto is a photo-booking app. I owned the pages where organizations set up a profile and create events that people can RSVP to, connected them to the company’s live servers, and handed the project off so the team could keep running it after I left.</p>
+        <ul class="tags" aria-label="Technologies used">
+          <li>TypeScript</li><li>React</li><li>Astro</li><li>Next.js</li><li>Node.js</li><li>MongoDB</li><li>Zod</li><li>GitHub Actions</li><li>Vercel</li>
+        </ul>
+        <details class="tech">
+          <summary>Technical details</summary>
+          <ul>
+            <li>Rebuilt the existing UI, including layout, typography, and styling, from a single screenshot with no source access, and added role-based access for 3 user roles with Zod validation for phone, email, URL, and length.</li>
+            <li>Migrated the feature from Next.js to Astro for static hosting, handling routing, GitHub Actions CI, and hosting limits across GitHub Pages and Vercel.</li>
+            <li>Connected the frontend to the live Node/MongoDB API on production and staging by reading backend route and schema code, fixing field mismatches and an undocumented required field with the backend engineer.</li>
+            <li>Wrote the backend validation schema for organization accounts, matching the codebase’s existing Zod conventions with no new TypeScript errors.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">PokéLab: Machine Learning and Team Optimization</span>
+          <span class="entry-when">November 2026</span>
+        </div>
+        <p class="overview">A web app that asks two questions about all 1,025 Pokémon: do their stats naturally fall into a few distinct kinds of build, and can math pick a stronger team of six than simple rules? The answers were no and yes, and the app shows the evidence for both.</p>
+        <img class="shot" src="assets/pokelab-overview.jpg" width="1400" height="875" loading="lazy" alt="PokéLab overview page showing key findings and dataset summary">
+        <ul class="tags" aria-label="Technologies used">
+          <li>Python</li><li>pandas</li><li>scikit-learn</li><li>SciPy</li><li>PuLP</li><li>Streamlit</li><li>Plotly</li><li>pytest</li>
+        </ul>
+        <details class="tech">
+          <summary>Technical details</summary>
+          <ul>
+            <li>Built a cached, validated data pipeline over PokéAPI and Smogon usage stats covering 1,025 species, with documented cleaning rules and a pytest suite.</li>
+            <li>Tested K-Means and Gaussian mixture models against a stability rule set fixed before seeing results; no number of clusters from 3 to 8 passed (best bootstrap ARI 0.591 vs. 0.60 required), so the app reports a continuum, not archetypes.</li>
+            <li>Linked stats to competitive usage: total stats track usage (Spearman 0.51, 95% CI 0.44–0.58), while stat shape adds almost nothing on held-out data.</li>
+            <li>Formulated team building as an integer program in PuLP that maximizes type coverage, resistances, role coverage, and a stat floor under team rules; only 4% of 10,000 random teams met the rules and none matched the optimum.</li>
+          </ul>
+        </details>
+        <div class="project-links">
+          <a href="https://pokelab-rsingh.streamlit.app" target="_blank" rel="noopener">Open the live app</a>
+          <a href="https://github.com/Rsingh1010/pokelab" target="_blank" rel="noopener">View code on GitHub</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Mean-Reversion Pairs Trading</span>
+          <span class="entry-when">September 2026 – October 2026</span>
+        </div>
+        <p class="overview">Some stocks, like Coca-Cola and Pepsi, tend to move together. A classic trading idea is to bet that when their prices drift apart, they will come back together. I tested this carefully on 8 stock pairs: one pair passed the statistics, but it did not make money once trading costs were counted.</p>
+        <ul class="tags" aria-label="Technologies used">
+          <li>Python</li><li>pandas</li><li>statsmodels</li><li>yfinance</li>
+        </ul>
+        <details class="tech">
+          <summary>Technical details</summary>
+          <ul>
+            <li>Rebuilt an initial backtest after finding 5 flaws, including look-ahead bias in the hedge ratio, no train/test split, and pairs picked by correlation instead of cointegration.</li>
+            <li>Tested 8 candidate pairs with Engle-Granger cointegration and Benjamini-Hochberg FDR correction; one pair survived (KO–PEP, adjusted p = 0.036).</li>
+            <li>Ran transaction-cost sensitivity, statistical-power, and walk-forward stability checks that found no reliable edge, and closed the project as a documented negative result instead of tuning until it looked good.</li>
+          </ul>
+        </details>
+        <div class="project-links"><a href="https://github.com/Rsingh1010/mean-reversion-pairs-trading" target="_blank" rel="noopener">View code on GitHub</a></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul class="skills">
+          <li><img src="assets/icons/python.svg" alt="">Python</li>
+          <li><img src="assets/icons/typescript.svg" alt="">TypeScript</li>
+          <li><img src="assets/icons/javascript.svg" alt="">JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Data and machine learning</h3>
+        <ul class="skills">
+          <li><img src="assets/icons/pandas.svg" alt="">pandas</li>
+          <li><img src="assets/icons/numpy.svg" alt="">NumPy</li>
+          <li><img src="assets/icons/scikitlearn.svg" alt="">scikit-learn</li>
+          <li>SciPy</li>
+          <li>statsmodels</li>
+          <li><img src="assets/icons/matplotlib.svg" alt="">Matplotlib</li>
+          <li>seaborn</li>
+          <li><img src="assets/icons/plotly.svg" alt="">Plotly</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Optimization and apps</h3>
+        <ul class="skills">
+          <li>PuLP (integer programming)</li>
+          <li><img src="assets/icons/streamlit.svg" alt="">Streamlit</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Web development</h3>
+        <ul class="skills">
+          <li><img src="assets/icons/react.svg" alt="">React</li>
+          <li><img src="assets/icons/nextjs.svg" alt="">Next.js</li>
+          <li><img src="assets/icons/astro.svg" alt="">Astro</li>
+          <li><img src="assets/icons/nodejs.svg" alt="">Node.js</li>
+          <li><img src="assets/icons/mongodb.svg" alt="">MongoDB</li>
+          <li><img src="assets/icons/tailwindcss.svg" alt="">Tailwind CSS</li>
+          <li>Zod</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <ul class="skills">
+          <li><img src="assets/icons/git.svg" alt="">Git</li>
+          <li><img src="assets/icons/githubactions.svg" alt="">GitHub Actions</li>
+          <li><img src="assets/icons/pytest.svg" alt="">pytest</li>
+          <li><img src="assets/icons/vercel.svg" alt="">Vercel</li>
+          <li><img src="assets/icons/jupyter.svg" alt="">Jupyter</li>
+        </ul>
+      </div>
     </section>
 
     <section id="education">
@@ -284,69 +490,6 @@
       </div>
     </section>
 
-    <section id="experience">
-      <h2 class="section-title">Experience</h2>
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-title">Software Engineering Intern</span>
-          <span class="entry-when">June 2026 – September 2026</span>
-        </div>
-        <div class="entry-org">MiraPhoto | Early-stage startup | New York City, NY</div>
-        <ul class="bullets">
-          <li>Owned an Organization Profile &amp; Event RSVP feature end to end, rebuilding the existing UI, including layout, typography, and styling, from a single screenshot with no source access.</li>
-          <li>Migrated the feature from Next.js to Astro to meet static hosting requirements, resolving routing, CI/CD, and hosting issues across GitHub Pages and Vercel.</li>
-          <li>Connected the Astro frontend to a live Node.js/MongoDB backend by reading its route handlers and schemas, then found an undocumented schema mismatch and resolved it with the backend engineer.</li>
-          <li>Implemented role-based access for 3 user roles and form validation for phone, URL, email, and length using React Hook Form and Zod.</li>
-        </ul>
-        <div>
-          <span class="stack">TypeScript</span><span class="stack">Next.js</span><span class="stack">Astro</span><span class="stack">React</span><span class="stack">Zod</span><span class="stack">GitHub Actions</span><span class="stack">Vercel</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-title">PokéLab: Machine Learning &amp; Team Optimization</span>
-          <span class="entry-when">November 2026</span>
-        </div>
-        <p class="project-summary">Do Pokémon stats form real archetypes, and can an integer program build better teams than simple rules? Pre-set tests said no to the first and yes to the second.</p>
-        <img class="shot" src="assets/pokelab-overview.jpg" width="1400" height="875" loading="lazy" alt="PokéLab overview page showing key findings and dataset summary">
-        <ul class="bullets">
-          <li>Built a cached, validated data pipeline over PokéAPI and Smogon usage stats covering 1,025 species, with documented cleaning rules and a pytest suite.</li>
-          <li>Tested K-Means and Gaussian mixture models against a stability rule set fixed before seeing results; no number of clusters from 3 to 8 passed (best bootstrap ARI 0.591 vs. 0.60 required), so the app reports a continuum, not archetypes.</li>
-          <li>Linked stats to competitive usage: total stats track usage (Spearman 0.51, 95% CI 0.44–0.58), while stat shape adds almost nothing on held-out data.</li>
-          <li>Formulated team building as an integer program in PuLP that maximizes type coverage, resistances, role coverage, and a stat floor under team rules; only 4% of 10,000 random teams met the rules and none matched the optimum.</li>
-        </ul>
-        <div>
-          <span class="stack">Python</span><span class="stack">pandas</span><span class="stack">scikit-learn</span><span class="stack">SciPy</span><span class="stack">PuLP</span><span class="stack">Streamlit</span><span class="stack">Plotly</span><span class="stack">pytest</span>
-        </div>
-        <div class="project-links">
-          <a href="https://pokelab-rsingh.streamlit.app" target="_blank" rel="noopener">Open the live app →</a>
-          <a href="https://github.com/Rsingh1010/pokelab" target="_blank" rel="noopener">View code on GitHub →</a>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <span class="entry-title">Mean-Reversion Pairs Trading</span>
-          <span class="entry-when">September 2026 – October 2026</span>
-        </div>
-        <p class="project-summary">A leakage-free pairs-trading pipeline that found one statistically significant pair, and then showed it wasn't tradeable.</p>
-        <ul class="bullets">
-          <li>Rebuilt an initial backtest after finding 5 flaws, including look-ahead bias in the hedge ratio, no train/test split, and pairs picked by correlation instead of cointegration.</li>
-          <li>Tested 8 candidate pairs with Engle-Granger cointegration and Benjamini-Hochberg FDR correction; one pair survived (KO–PEP, adjusted p = 0.036).</li>
-          <li>Ran transaction-cost sensitivity, statistical-power, and walk-forward stability checks that found no reliable edge, and closed the project as a documented negative result instead of tuning until it looked good.</li>
-        </ul>
-        <div>
-          <span class="stack">Python</span><span class="stack">pandas</span><span class="stack">statsmodels</span><span class="stack">yfinance</span>
-        </div>
-        <div class="project-links"><a href="https://github.com/Rsingh1010/mean-reversion-pairs-trading" target="_blank" rel="noopener">View code on GitHub →</a></div>
-      </div>
-    </section>
-
     <section id="activities">
       <h2 class="section-title">Beyond the desk</h2>
       <ul class="compact">
@@ -358,13 +501,28 @@
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>
-      <p>Best reached by email. Happy to talk about PokéLab’s team optimizer, the diagnostic pass on the pairs-trading project, the MiraPhoto migration, or anything else here.</p>
-      <ul class="compact">
-        <li><a href="mailto:singh.raunaq1006@gmail.com">singh.raunaq1006@gmail.com</a></li>
-        <li><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener">github.com/Rsingh1010</a></li>
-        <li><a href="https://www.linkedin.com/in/raunaqs10/" target="_blank" rel="noopener">linkedin.com/in/raunaqs10</a></li>
-        <li><a href="Raunaq.Singh.pdf" target="_blank" rel="noopener">Download resume (PDF)</a></li>
-      </ul>
+      <div class="contact-grid">
+        <form class="contact" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Paste your Web3Forms access key below (get one free at web3forms.com). Until then, the form opens an email instead. -->
+          <input type="hidden" name="access_key" value="1dc886e7-cff5-4f84-a51b-125e15f1219d">
+          <input type="hidden" name="subject" value="New message from rsingh1010.github.io">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+          <label>Message<textarea name="message" required></textarea></label>
+          <button type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div>
+          <p style="margin-top:0">Happy to talk about PokéLab’s team optimizer, the pairs-trading project, the MiraPhoto work, or anything else here.</p>
+          <ul class="direct">
+            <li><a href="mailto:singh.raunaq1006@gmail.com"><svg><use href="#i-mail"/></svg>singh.raunaq1006@gmail.com</a></li>
+            <li><a href="https://github.com/Rsingh1010" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>github.com/Rsingh1010</a></li>
+            <li><a href="https://www.linkedin.com/in/raunaqs10/" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>linkedin.com/in/raunaqs10</a></li>
+            <li><a href="Raunaq.Singh.pdf" target="_blank" rel="noopener"><svg><use href="#i-file"/></svg>Resume (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <footer>
@@ -374,6 +532,53 @@
 
   </main>
 </div>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  var button = form.querySelector('button');
+  var keyMissing = form.access_key.value.indexOf('YOUR_') === 0;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var message = form.message.value.trim();
+
+    if (keyMissing) {
+      var body = message + '\n\n' + name + ' (' + email + ')';
+      window.location.href = 'mailto:singh.raunaq1006@gmail.com?subject=' +
+        encodeURIComponent('Message from your website') + '&body=' + encodeURIComponent(body);
+      return;
+    }
+
+    button.disabled = true;
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          status.className = 'form-status ok';
+          status.textContent = 'Message sent. I’ll reply by email.';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Send failed');
+        }
+      })
+      .catch(function () {
+        status.className = 'form-status err';
+        status.textContent = 'Message not sent. Email me directly at singh.raunaq1006@gmail.com.';
+      })
+      .then(function () { button.disabled = false; });
+  });
+})();
+</script>
 
 </body>
 </html>
